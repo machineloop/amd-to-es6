@@ -4,7 +4,7 @@
   "description": "convert amd to es6",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd ./node_modules/@buxlabs/ast/ && npm install",
+    "postinstall": "npm-install",
     "test": "ava \"test/spec/**/*.js\"",
     "coverage": "nyc --check-coverage --lines 100 --branches 100 --functions 100 --statements 100 npm test"
   },
@@ -39,6 +39,7 @@
     "acorn": "5.0.3",
     "commander": "2.9.0",
     "glob": "7.1.1",
+    "npm-install": "0.0.1",
     "underscore.string": "3.3.4"
   }
 }

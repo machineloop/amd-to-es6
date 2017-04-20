@@ -4,7 +4,7 @@
   "description": "convert amd to es6",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd node_modules/@buxlabs/ast/ && npm install",
+    "postinstall": "cd ./node_modules/@buxlabs/ast/ && npm install",
     "test": "ava \"test/spec/**/*.js\"",
     "coverage": "nyc --check-coverage --lines 100 --branches 100 --functions 100 --statements 100 npm test"
   },

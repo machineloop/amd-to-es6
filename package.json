@@ -4,6 +4,7 @@
   "description": "convert amd to es6",
   "main": "index.js",
   "scripts": {
+    "postinstall": "cd node_modules/@buxlabs/ast/ && npm install",
     "test": "ava \"test/spec/**/*.js\"",
     "coverage": "nyc --check-coverage --lines 100 --branches 100 --functions 100 --statements 100 npm test"
   },
@@ -15,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/buxlabs/amd-to-es6.git"
+    "url": "git+https://github.com/machineloop/amd-to-es6.git"
   },
   "keywords": [
     "amd",

@@ -14,8 +14,11 @@ class Module extends AbstractSyntaxTree {
 
     convert (options) {
         var dependencies = this.getDependencies();
-        var nodes = getModuleCode(this.ast);
-        var imports = generateImports(dependencies, options);
+        var parsed = getModuleCode(this.ast);
+        var prebody = parsed.prebody;
+        var nodes = parsed.body;
+        var imports = prebody;
+        imports = imports.concat(generateImports(dependencies, options));
         var code = generateCode(this.ast, nodes, options);
         this.ast.body = imports.concat(code);
         this.removeUseStrict();

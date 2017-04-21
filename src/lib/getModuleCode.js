@@ -7,7 +7,11 @@ const getDefineCallbackArguments = require("./getDefineCallbackArguments");
 
 module.exports = function (ast) {
     var body = [];
+    var prebody = [];
     walk.simple(ast, {
+        ImportDeclaration: function (node) {
+            prebody.unshift(node);
+        },
         CallExpression: function (node) {
             if (isDefineWithDependencies(node)) {
                 let define = getDefineCallbackArguments(node);
@@ -21,5 +25,5 @@ module.exports = function (ast) {
             }
         }
     });
-    return body;
+    return {prebody: prebody, body: body};
 };

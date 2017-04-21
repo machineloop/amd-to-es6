@@ -97,9 +97,7 @@ module.exports = function (ast, code, options) {
     var canHaveRequireSugar = hasDefineWithCallback(ast);
     var imports = [];
     var nodes = code.map(function (node) {
-        if (isImportStatement(node)) {
-            return node;
-        } else if (canHaveRequireSugar && isVariableDeclaration(node)) {
+        if (canHaveRequireSugar && isVariableDeclaration(node)) {
             return changeVariableDeclaration(node, options);
         } else if (isRequireCallExpression(node)) {
             return changeRequireCallExpressionToImportDeclaration(node, options);

@@ -1,7 +1,6 @@
 "use strict";
 
 const isObjectExpression = require("./isObjectExpression");
-const isImportStatement = require("./isImportStatement");
 const isRequireSugarVariableDeclarator = require("./isRequireSugarVariableDeclarator");
 const isReturnStatement = require("./isReturnStatement");
 const isVariableDeclaration = require("./isVariableDeclaration");
